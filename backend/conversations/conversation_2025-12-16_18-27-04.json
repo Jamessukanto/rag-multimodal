@@ -1,0 +1,36 @@
+[
+  {
+    "role": "user",
+    "content": "How to use ChromaDB with LangChain?"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "6dv04ayyh",
+        "name": "get_docs",
+        "input": {
+          "library": "langchain",
+          "query": "ChromaDB"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "6dv04ayyh",
+        "content": [
+          "No results found"
+        ]
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "It seems that the documentation search did not return any specific results for \"ChromaDB\" within LangChain. This might be due to ChromaDB not being directly mentioned in the targeted documentation or requiring a broader search approach. For guidance on integrating ChromaDB with LangChain, consider referring to LangChain's official resources on vector stores, where ChromaDB (a lightweight vector database) might be discussed as part of similarity search or embedding workflows. Let me know if I can refine the query further!"
+  }
+]

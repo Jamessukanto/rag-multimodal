@@ -1,0 +1,36 @@
+[
+  {
+    "role": "user",
+    "content": "In LangChain, how do I use ChromaDB?"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "h29fysnee",
+        "name": "get_docs",
+        "input": {
+          "library": "langchain",
+          "query": "ChromaDB"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "h29fysnee",
+        "content": [
+          "No results found"
+        ]
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "It seems there are no direct results for \"ChromaDB\" in the LangChain documentation. However, you can use Chroma (a vector database) with LangChain's `vectorstore` module. Here's a general approach:\n\n1. **Install required packages**:\n```bash\npip install chromadb langchain\n```\n\n2. **Basic usage example**:\n```python\nfrom langchain.vectorstores import Chroma\nfrom langchain.embeddings import OpenAIEmbeddings\n\n# Initialize embeddings\nembeddings = OpenAIEmbeddings()\n\n# Create Chroma vector store\nchroma_db = Chroma(\n    collection_name=\"my_collection\",\n    embedding_function=embeddings,\n    persist_directory=\"./chroma_db\"\n)\n\n# Add documents\nchroma_db.add_documents([\n    {\"page_content\": \"Your document text 1\", \"metadata\": {\"source\": \"doc1\"}},\n    {\"page_content\": \"Your document text 2\", \"metadata\": {\"source\": \"doc2\"}},\n])\n\n# Search the DB\nresults = chroma_db.similarity_search(\"Query text\", k=2)\n```\n\nIf you'd like me to refine the search further or explain any part in more detail, let me know!"
+  }
+]

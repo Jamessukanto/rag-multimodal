@@ -1,0 +1,32 @@
+[
+  {
+    "role": "user",
+    "content": "How to use ChromaDB with LangChain?"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "dvgg1btky",
+        "name": "get_docs",
+        "input": {
+          "library": "langchain",
+          "query": "ChromaDB"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "dvgg1btky",
+        "content": [
+          "No results found"
+        ]
+      }
+    ]
+  }
+]

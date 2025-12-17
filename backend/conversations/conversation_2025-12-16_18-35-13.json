@@ -1,0 +1,32 @@
+[
+  {
+    "role": "user",
+    "content": "how to create an agent with langchain"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "exka685n3",
+        "name": "get_docs",
+        "input": {
+          "library": "langchain",
+          "query": "create an agent"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "exka685n3",
+        "content": [
+          "URL: https://python.langchain.com/docs/integrations/document_loaders/airbyte_gong?ref=blog.langchain.com&ajs_aid=4823bbd1-951c-4386-9b68-9646af5b4390\nHTTP error 308: Redirect response '308 Permanent Redirect' for url 'https://python.langchain.com/docs/integrations/document_loaders/airbyte_gong?ref=blog.langchain.com&ajs_aid=4823bbd1-951c-4386-9b68-9646af5b4390'\nRedirect location: '/docs/integrations/document_loaders/airbyte_gong/?ref=blog.langchain.com&ajs_aid=4823bbd1-951c-4386-9b68-9646af5b4390'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/308..."
+        ]
+      }
+    ]
+  }
+]

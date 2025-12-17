@@ -1,0 +1,32 @@
+[
+  {
+    "role": "user",
+    "content": "In LangChain, how do I use ChromaDB?"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "h29fysnee",
+        "name": "get_docs",
+        "input": {
+          "library": "langchain",
+          "query": "ChromaDB"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "h29fysnee",
+        "content": [
+          "No results found"
+        ]
+      }
+    ]
+  }
+]

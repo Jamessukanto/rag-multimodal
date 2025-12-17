@@ -1,0 +1,36 @@
+[
+  {
+    "role": "user",
+    "content": "How to use ChromaDB with LangChain?"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "nv9566ra7",
+        "name": "get_docs",
+        "input": {
+          "library": "langchain",
+          "query": "ChromaDB"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "nv9566ra7",
+        "content": [
+          "No results found"
+        ]
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "It seems the documentation search didn't find specific results for \"ChromaDB\" in the LangChain library. However, the general approach to using ChromaDB with LangChain involves:\n\n1. Installing the required packages:\n```bash\npip install chromadb langchain\n```\n\n2. Example usage:\n```python\nfrom langchain.vectorstores import Chroma\nfrom langchain.embeddings import OpenAIEmbeddings\n\n# Initialize embeddings\nembeddings = OpenAIEmbeddings()\n\n# Initialize ChromaDB vector store\nchroma_db = Chroma(persist_directory=\".\", embedding_function=embeddings)\n\n# Add documents to the database\nchroma_db.add_texts([\"Document 1 text\", \"Document 2 text\"])\n\n# Perform similarity search\nresults = chroma_db.similarity_search(\"Query text\", k=2)\n```\n\nThis is a basic example - actual implementation may vary depending on your specific requirements and ChromaDB version. Would you like me to elaborate on any particular aspect of this implementation?"
+  }
+]
