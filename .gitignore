@@ -20,6 +20,7 @@ yarn.lock
 pnpm-lock.yaml
 dist/
 build/
+backend/data/
 
 # Environment variables
 .env
@@ -34,4 +35,14 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Large notebook files (experiments)
+NTBK_EXPERIMENTS/*.ipynb
+*.ipynb_checkpoints
+
+# Data files (too large for git)
+backend/data/
+*.pkl
+*.bin
+*.sqlite3
 

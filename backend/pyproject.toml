@@ -12,5 +12,23 @@ dependencies = [
     "pydantic-settings>=2.12.0",
     "python-dotenv>=1.2.1",
     "uvicorn>=0.38.0",
+    # Phase 2: RAG dependencies
+    "arxiv>=2.1.0",
+    "pymupdf>=1.23.0",  
+    # Note: chromadb and grpcio installed separately via 'uv pip install chromadb' 
+    # (per ChromaDB official docs: https://docs.trychroma.com/docs/overview/getting-started)
+    # This avoids grpcio compilation issues
+    "numpy>=1.24.0",
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.0", 
+    "aiofiles>=23.0.0",  # Async file operations
+    "tqdm>=4.66.0",  
 ]
+
+[tool.uv]
+# Exclude dependencies that don't support macOS 10.16
+# ChromaDB can work without these for basic vector operations
+exclude-dependencies = ["onnxruntime", "pulsar-client"]
+# Constrain greenlet to use version with wheels for macOS 10.16
+constraint-dependencies = ["greenlet<3.0.0"]
 
