@@ -73,10 +73,12 @@ class ToolRegistry:
             )
             self._register_tool(wrapped_tool)
     
+    
     def get_all_tools(self) -> List[BaseTool]:
         """Get all registered tools"""
         return list(self._tools.values())
     
+
     async def execute_tool(self, tool_name: str, tool_args: Dict[str, Any]) -> Any:
         """Execute a tool by name."""
         tool = self._tools.get(tool_name)

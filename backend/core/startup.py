@@ -69,30 +69,9 @@ async def initialize_rag_system(app: FastAPI):
     Initialize RAG components (storage, retrieval, services).
     Also registers RAG tools in the tool registry.
     """
-    # Initialize vector stores (optional if chromadb not installed)
-    single_vector_store = None
-    multi_vector_store = None
-    
-    # if SingleVectorStore is not None:
-    #     try:
-    #         single_vector_store = SingleVectorStore()
-    #         logger.info("SingleVectorStore initialized successfully")
-    #     except ImportError as e:
-    #         logger.warning(f"ChromaDB not available, SingleVectorStore disabled: {e}")
-    # else:
-    #     logger.warning("ChromaDB not installed, SingleVectorStore disabled. Install with: uv pip install chromadb")
-    
-    # if MultiVectorStore is not None:
-    #     try:
-    #         multi_vector_store = MultiVectorStore()
-    #         logger.info("MultiVectorStore initialized successfully")
-    #     except ImportError as e:
-    #         logger.warning(f"ChromaDB not available, MultiVectorStore disabled: {e}")
-    # else:
-    #     logger.warning("ChromaDB not installed, MultiVectorStore disabled. Install with: uv pip install chromadb")
+    # Initialize stores
     single_vector_store = SingleVectorStore()
     multi_vector_store = MultiVectorStore()
-    
     document_sql_store = DocumentSQLStore()
     file_store = FileStore()
     
